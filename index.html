@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EXECUTIVE PERFORMANCE | Gestão Estratégica de Tráfego Pago</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#b4b2b2",
+                        "surface": "#131313",
+                        "surface-bright": "#3a3939",
+                        "surface-container": "#201f1f",
+                        "surface-tint": "#e9c349",
+                        "on-background": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#303030",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-fixed": "#241a00",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-secondary-container": "#b7b5b4",
+                        "background": "#131313",
+                        "inverse-primary": "#735c00",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary": "#313030",
+                        "surface-dim": "#131313",
+                        "secondary": "#c8c6c5",
+                        "primary": "#f2ca50",
+                        "tertiary": "#d0cdcd",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "outline": "#99907c",
+                        "on-tertiary-container": "#454545",
+                        "on-primary": "#3c2f00",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#474746",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(233, 195, 73, 0.05) 0%, rgba(19, 19, 19, 0) 70%);
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .power-curve {
+            transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Reveal Animations */
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s cubic-bezier(0.2, 0, 0, 1), transform 1s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Header Transition */
+        header {
+            transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .glass-scrolled {
+            padding: 0.5rem 0 !important;
+            background: rgba(19, 19, 19, 0.95) !important;
+            backdrop-filter: blur(40px) !important;
+            border-bottom: 1px solid rgba(233, 195, 73, 0.1);
+        }
+    </style>
+    <script src="script.js" defer></script>
+
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary selection:text-on-primary">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-['Noto_Serif'] font-black tracking-tighter text-[#E5E2E1]">
+                EXECUTIVE PERFORMANCE
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#D0C5AF] hover:text-[#F2CA50] transition-colors duration-300 font-label text-sm uppercase tracking-widest" href="#servicos">Serviços</a>
+<a class="text-[#D0C5AF] hover:text-[#F2CA50] transition-colors duration-300 font-label text-sm uppercase tracking-widest" href="#resultados">Resultados</a>
+<a class="text-[#D0C5AF] hover:text-[#F2CA50] transition-colors duration-300 font-label text-sm uppercase tracking-widest" href="#metodologia">Metodologia</a>
+<a class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform power-curve shadow-lg shadow-primary/20" href="https://wa.me/558899549560?text=Olá!%20Gostaria%20de%20solicitar%20uma%20análise%20estratégica%20gratuita%20para%20o%20meu%20negócio.">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+                    Falar no WhatsApp
+                </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center justify-center px-6 overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-8 lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant/20 bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">Gestão de Alta Performance</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-surface leading-[1.1] tracking-tight">
+                        Transforme investimento em <span class="text-primary italic">clientes reais.</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Gestão estratégica de tráfego pago para negócios que buscam crescimento exponencial e leads qualificados através de inteligência de dados.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="cta-gradient text-on-primary px-8 py-4 rounded-md font-bold text-lg text-center hover:shadow-[0_0_30px_rgba(242,202,80,0.3)] transition-all power-curve" href="#contato">
+                            Solicitar análise gratuita
+                        </a>
+<a class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-md font-bold text-lg text-center hover:bg-surface-container transition-all power-curve" href="https://wa.me/558899549560?text=Olá!%20Gostaria%20de%20solicitar%20uma%20análise%20estratégica%20gratuita%20para%20o%20meu%20negócio.">
+                            Falar com especialista
+                        </a>
+</div>
+</div>
+<div class="md:col-span-4 lg:col-span-5 relative hidden md:block">
+<div class="relative z-10 bg-surface-container rounded-xl p-8 shadow-2xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">ROI Mensal</span>
+<span class="text-primary font-bold">+412%</span>
+</div>
+<div class="h-48 flex items-end gap-2 mb-4">
+<div class="flex-1 bg-outline-variant/20 rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-outline-variant/20 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-outline-variant/20 rounded-t-sm h-[35%]"></div>
+<div class="flex-1 bg-primary-container rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<p class="text-sm text-on-surface-variant italic">"A análise de dados é a nossa bússola para o seu lucro."</p>
+</div>
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Trust Points -->
+<section class="bg-surface-container-low py-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between gap-8 md:gap-4">
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified_user">verified_user</span>
+<span class="font-headline text-xl font-bold text-on-surface">Estratégia personalizada</span>
+</div>
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-headline text-xl font-bold text-on-surface">Gestão profissional</span>
+</div>
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="trending_up">trending_up</span>
+<span class="font-headline text-xl font-bold text-on-surface">Foco em conversão</span>
+</div>
+</div>
+</section>
+<!-- Benefits Section - Bento Grid Style -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="servicos">
+<div class="mb-16">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-6">Por que somos a escolha <br/><span class="text-primary">estratégica?</span></h2>
+<div class="w-24 h-1 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="groups">groups</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Mais leads qualificados</h3>
+<p class="text-on-surface-variant leading-relaxed">Não buscamos apenas cliques. Filtramos o público para atrair quem realmente tem potencial de compra para o seu negócio.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="ads_click">ads_click</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Foco em resultado</h3>
+<p class="text-on-surface-variant leading-relaxed">Cada centavo investido é monitorado. Nosso compromisso é com o retorno sobre o investimento (ROI) e escala.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="psychology">psychology</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Estratégia sob medida</h3>
+<p class="text-on-surface-variant leading-relaxed">Seu negócio é único. Criamos funis de vendas e campanhas que respeitam a jornada do seu cliente ideal.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="update">update</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Otimização contínua</h3>
+<p class="text-on-surface-variant leading-relaxed">O mercado muda, e nós acompanhamos. Testes A/B constantes para garantir o menor custo por aquisição possível.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="description">description</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Relatórios claros</h3>
+<p class="text-on-surface-variant leading-relaxed">Transparência total. Você recebe dados mastigados e insights estratégicos sobre o que está funcionando.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all power-curve">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="savings">savings</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Melhor aproveitamento</h3>
+<p class="text-on-surface-variant leading-relaxed">Eliminamos o desperdício de verba em públicos errados ou palavras-chave irrelevantes.</p>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<img alt="Equipe estratégica" class="rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Equipe profissional analisando gráficos em ambiente moderno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI67Iux6st4oMOn0geaxSXRK0i2WhLLXjvson1hAMs2j9cTqH6XYhpCS6lOszNftlxvYIoBEtfmEWGyZiJk5_IvUWBX-jnQL0lAC3RGacmtFUMwDl4601nswpSJShujm38327C88gf5CDGLSDe7pW3TEcB06gZ5Jjd_eJIwxEAWV1Icm5TQ11oJOhbTrY2z7OE6ld9X4pHot43kHPlf0Ps1SVPDg-SeIUx2slnZJ-fvbJGuFtDinKMRwv3YkJvbC-Kj2YOdTZQhL6J"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-lg shadow-xl hidden lg:block">
+<p class="font-headline text-4xl font-black text-on-primary">100%</p>
+<p class="text-on-primary font-bold text-xs uppercase tracking-tighter">Data Driven</p>
+</div>
+</div>
+<div class="space-y-6">
+<span class="text-primary font-bold tracking-[0.3em] text-xs uppercase">Nossa Filosofia</span>
+<h2 class="font-headline text-4xl font-bold leading-tight">Decisões baseadas em dados, não em <span class="text-primary">suposições.</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Na Executive Performance, entendemos que o tráfego pago é apenas a ponta do iceberg. A verdadeira escala acontece na análise profunda dos números e no ajuste fino da jornada de compra.
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Nossa equipe atua como um braço estratégico do seu negócio, unindo criatividade publicitária com rigor matemático para garantir que cada real investido retorne como lucro previsível.
+                    </p>
+<div class="pt-6">
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
+                            Saiba mais sobre nossa metodologia
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline text-4xl md:text-5xl font-bold">Ecossistema de Performance</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Soluções completas para dominar os canais digitais mais lucrativos.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- S1 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Meta Ads</h4>
+<p class="text-sm text-on-surface-variant">Anúncios de alta conversão no Instagram e Facebook, focados em atenção e desejo.</p>
+</div>
+<!-- S2 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Google Ads</h4>
+<p class="text-sm text-on-surface-variant">Rede de Pesquisa e Display para capturar clientes no momento exato da intenção de compra.</p>
+</div>
+<!-- S3 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Landing Pages</h4>
+<p class="text-sm text-on-surface-variant">Páginas de destino otimizadas para transformar o tráfego em cadastros e vendas.</p>
+</div>
+<!-- S4 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Remarketing</h4>
+<p class="text-sm text-on-surface-variant">Não perca o cliente que já demonstrou interesse. Recupere oportunidades com inteligência.</p>
+</div>
+<!-- S5 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Estratégia de Funil</h4>
+<p class="text-sm text-on-surface-variant">Desenho completo da jornada, do primeiro contato ao fechamento do negócio.</p>
+</div>
+<!-- S6 -->
+<div class="group p-8 border-l-2 border-outline-variant/20 hover:border-primary transition-all duration-500 bg-surface-container-low">
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Análise de Métricas</h4>
+<p class="text-sm text-on-surface-variant">Dashboards personalizados para você acompanhar seus KPIs em tempo real.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Authority/Results Section -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden" id="resultados">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+<div class="space-y-2">
+<p class="font-headline text-5xl font-black text-primary">+500</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Campanhas Ativas</p>
+</div>
+<div class="space-y-2">
+<p class="font-headline text-5xl font-black text-primary">+10M</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Gerenciados/Ano</p>
+</div>
+<div class="space-y-2">
+<p class="font-headline text-5xl font-black text-primary">+80k</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Leads Qualificados</p>
+</div>
+<div class="space-y-2">
+<p class="font-headline text-5xl font-black text-primary">98%</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Foco em Performance</p>
+</div>
+</div>
+<!-- Decorative circle -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary/5 rounded-full pointer-events-none"></div>
+</section>
+<!-- How It Works -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="metodologia">
+<h2 class="font-headline text-4xl font-bold text-center mb-20">O Caminho até o <span class="text-primary">Topo</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="relative p-8 bg-surface-container rounded-lg group">
+<span class="text-6xl font-black text-primary/10 absolute top-4 right-4">01</span>
+<h3 class="font-headline text-xl font-bold mb-4">Diagnóstico</h3>
+<p class="text-sm text-on-surface-variant">Analisamos seu cenário atual, concorrência e identificamos gargalos no seu funil.</p>
+</div>
+<div class="relative p-8 bg-surface-container rounded-lg group">
+<span class="text-6xl font-black text-primary/10 absolute top-4 right-4">02</span>
+<h3 class="font-headline text-xl font-bold mb-4">Planejamento</h3>
+<p class="text-sm text-on-surface-variant">Definição de canais, verba ideal e criação da estratégia criativa de conversão.</p>
+</div>
+<div class="relative p-8 bg-surface-container rounded-lg group">
+<span class="text-6xl font-black text-primary/10 absolute top-4 right-4">03</span>
+<h3 class="font-headline text-xl font-bold mb-4">Execução</h3>
+<p class="text-sm text-on-surface-variant">Implementação das campanhas com setup técnico avançado e rastreamento de dados.</p>
+</div>
+<div class="relative p-8 bg-surface-container rounded-lg group">
+<span class="text-6xl font-black text-primary/10 absolute top-4 right-4">04</span>
+<h3 class="font-headline text-xl font-bold mb-4">Otimização</h3>
+<p class="text-sm text-on-surface-variant">Ajustes diários baseados em performance para escalar os resultados positivos.</p>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-headline text-4xl font-bold mb-16 text-center">Quem confia na nossa <span class="text-primary">estratégia</span></h2>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-lg">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface-variant mb-8 italic">"A Executive mudou o jogo do nosso faturamento. Em 3 meses, triplicamos o número de leads qualificados com o mesmo investimento."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary"></div>
+<div>
+<p class="font-bold text-on-surface">Ricardo Mendes</p>
+<p class="text-xs text-on-surface-variant uppercase">CEO @ TechFocus</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-lg">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface-variant mb-8 italic">"Finalmente uma agência que fala de ROI e não de 'curtidas'. A clareza dos relatórios é o que mais nos impressiona."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary"></div>
+<div>
+<p class="font-bold text-on-surface">Juliana Costa</p>
+<p class="text-xs text-on-surface-variant uppercase">Diretora de Marketing @ Luxor</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-lg">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface-variant mb-8 italic">"O tráfego pago deles é cirúrgico. Atraímos exatamente o público que estávamos buscando para nossos serviços premium."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary"></div>
+<div>
+<p class="font-bold text-on-surface">André Santos</p>
+<p class="text-xs text-on-surface-variant uppercase">Fundador @ InvestPro</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 max-w-3xl mx-auto px-6">
+<h2 class="font-headline text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Quanto devo investir em tráfego?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        O investimento varia conforme o seu objetivo e segmento. Iniciamos com um diagnóstico para sugerir uma verba que faça sentido para o retorno esperado.
+                    </div>
+</details>
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Em quanto tempo vejo resultados?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        Campanhas de pesquisa podem gerar leads nos primeiros dias. Estratégias mais complexas de branding e funil costumam maturar entre 30 a 90 dias.
+                    </div>
+</details>
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Preciso ter um site pronto?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        É recomendável ter uma Landing Page de alta conversão. Se você não tiver, nós desenvolvemos como parte da nossa entrega estratégica.
+                    </div>
+</details>
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Quais plataformas vocês trabalham?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        Somos especialistas em Meta Ads (Instagram/Facebook) e Google Ads (Pesquisa, Display, YouTube), além de LinkedIn Ads para B2B.
+                    </div>
+</details>
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Vocês garantem vendas?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        Garantimos a entrega de tráfego qualificado e otimização constante. O fechamento da venda depende também da oferta, produto e do seu time comercial.
+                    </div>
+</details>
+<details class="group bg-surface-container rounded-lg">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface">Como acompanho os resultados?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm">
+                        Fornecemos um dashboard exclusivo e reuniões periódicas de alinhamento para discutir KPIs e próximos passos.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Lead Capture Form -->
+<section class="py-24 px-6 bg-surface-container-low border-t border-outline-variant/10" id="contato">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+<div>
+<h2 class="font-headline text-4xl font-bold mb-6">Pronto para o <br/><span class="text-primary">Próximo Nível?</span></h2>
+<p class="text-on-surface-variant mb-12 text-lg">Preencha os dados e receba uma análise estratégica gratuita do seu negócio feita por um de nossos especialistas.</p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<span class="text-on-surface">contato@executiveperformance.com</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+<span class="text-on-surface">+55 (11) 99999-9999</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-on-surface">São Paulo, SP - Digital First</span>
+</div>
+</div>
+</div>
+<form action="LINK_DO_FORMULARIO" class="bg-surface-container p-8 md:p-12 rounded-xl space-y-6" method="POST">
+<div class="grid gap-6">
+<input class="bg-surface-container-lowest border-none rounded-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-outline-variant py-4" placeholder="Seu Nome" required="" type="text"/>
+<input class="bg-surface-container-lowest border-none rounded-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-outline-variant py-4" placeholder="E-mail Corporativo" required="" type="email"/>
+<div class="grid grid-cols-2 gap-4">
+<input class="bg-surface-container-lowest border-none rounded-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-outline-variant py-4" placeholder="Telefone/WhatsApp" required="" type="tel"/>
+<input class="bg-surface-container-lowest border-none rounded-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-outline-variant py-4" placeholder="Empresa" required="" type="text"/>
+</div>
+<textarea class="bg-surface-container-lowest border-none rounded-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-outline-variant py-4" placeholder="Fale um pouco sobre o seu negócio e objetivos..." rows="4"></textarea>
+</div>
+<button class="w-full cta-gradient text-on-primary font-bold py-5 rounded-md hover:shadow-[0_0_30px_rgba(242,202,80,0.3)] transition-all power-curve uppercase tracking-widest text-sm" type="submit">
+                        Quero atrair mais clientes
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full border-t border-[#4D4635]/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-2xl font-['Noto_Serif'] text-[#E5E2E1] mb-4">EXECUTIVE PERFORMANCE</div>
+<p class="font-['Inter'] text-[#D0C5AF] leading-relaxed text-sm">Elevando o padrão do tráfego pago através de gestão executiva e análise de dados em tempo real.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-on-surface font-bold uppercase tracking-widest text-xs">Navegação</h5>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">Serviços</a>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">Resultados</a>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">Metodologia</a>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-on-surface font-bold uppercase tracking-widest text-xs">Legal</h5>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">Privacidade</a>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">Termos de Uso</a>
+<a class="text-[#D0C5AF] hover:text-[#E9C349] transition-all text-sm" href="#">LGPD</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-on-surface font-bold uppercase tracking-widest text-xs">Social</h5>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+</a>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-4">© 2024 Executive Performance. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+</body></html>
